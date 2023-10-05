@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>BEANS</title>
+    <title>BEANS</title>
+    <style>
+        
+        /* Set the background color for the entire page */
+        body {
+            background-color: rgb(215, 127, 108);
+            margin: 0; /* Remove default margin to align content properly. */
+            position: relative; /* Make the body a positioning context */
+        }
+        /* Center the content both horizontally and vertically within the body */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* This ensures the body takes up the full viewport height. */
+        }
+        /* Additional styles for the heading and paragraph */
+        h1 {
+            font-size: 90px; /* Increase the font size to make the heading much bigger */
+            color: #333; /* Text color */
+        }
+        p {
+            font-size: 40px;
+            color: rgb(116, 13, 13); /* Text color */
+        }
+        /* Style the button to make it bean-shaped */
+        button {
+            background-color: #741b09; /* Button background color */
+            border: none;
+            color: rgb(111, 28, 28); /* Text color */
+            padding: 15px 32px;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 50%; /* Make the button round */
+            transform: skewX(30deg); /* Skew the button to make it bean-shaped */
+        }
+        /* Style for the dynamically created beans */
+        .bean {
+            width: 60px;
+            height: 50px;
+            background-color: #702115;
+            border-radius: 50%;
+            transform: skewX(30deg); /* Skew the button to make it bean-shaped */
+            position: absolute; /* Position the beans relative to the body */
+        }
+    </style>
+</head>
+<body>
+    <h1>BEANS</h1>
+    <p>beans beans beans</p>
+    <!-- Bean-shaped button with an onclick event -->
+    <button id="beanButton">Bean Button</button>
+
+    <!-- JavaScript to create and insert a new bean when the button is clicked -->
+    <script>
+        document.getElementById("beanButton").addEventListener("click", function() {
+            // Create a new bean element
+            var bean = document.createElement("div");
+            bean.className = "bean"; // Apply the "bean" class to the new bean
+
+            // Set a random position for the new bean
+            var randomX = Math.random() * (window.innerWidth - 50); // Adjusted to ensure the bean stays within the window width
+            var randomY = Math.random() * (window.innerHeight - 50); // Adjusted to ensure the bean stays within the window height
+            bean.style.left = randomX + "px";
+            bean.style.top = randomY + "px";
+
+            // Add the new bean to the body
+            document.body.appendChild(bean);
+        });
+    </script>
+</body>
+
+</html>
+
